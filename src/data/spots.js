@@ -442,7 +442,277 @@ For many, this road is not just a test of endurance and skill — it’s also a 
       ],
       correctAnswer: 2
     }
-  }
+  },
+  {
+    id: 10,
+    name: {
+      zh: "向天湖古道｜身在湖中的聚落想像",
+      en: "Xiangtian Hu Ancient Trail｜An Image of a Village within a Lake"
+    },
+    description: {
+      zh: "向天湖位於筆架山北麓，阿柔洋產業道路東側，海拔約200公尺，四周高、中間低，昔日水田映照如湖，因而得名。這裡仍保有原始農村風貌，種植水稻、蔬菜與綠竹筍，四季更迭展現田園之美。每年春天，螢火蟲在夜色中飛舞，桂竹林與山泉灌溉的水梯田交織出純樸風景，插秧與收割時鄰里互助，洋溢人情溫度。",
+      en: "Xiangtian Hu is located on the northern slope of Bijiashan Mountain, east of Arouyang Industrial Road, at an altitude of about 200 meters. The area is higher around the edges and lower in the center, where former rice paddies once reflected the sky like a lake, hence the name ‘Xiangtian Hu’ (‘Lake Reflecting the Sky’)."
+    },
+    fullDescription: {
+      zh: `向天湖位於筆架山北麓，阿柔洋產業道路東側，海拔約200公尺，四周高、中間低，昔日水田映照如湖，因而得名。這裡仍保有原始農村風貌，種植水稻、蔬菜與綠竹筍，四季更迭展現田園之美。每年春天，螢火蟲在夜色中飛舞，桂竹林與山泉灌溉的水梯田交織出純樸風景，插秧與收割時鄰里互助，洋溢人情溫度。
+高家先民自麻竹寮遷來，開墾土地，發展出以茶、水稻與果樹為主的聚落。百年紅磚屋與石頭厝至今仍有人居住，延續舊日生活記憶。通往聚落的向天湖古道，曾是學童與農人日常必經之路，小徑沿溪、穿林、跨石橋，生態資源豐富，吸引翡翠樹蛙、臺灣藍鵲與黃嘴角鴞等棲息，三至五月更是賞螢佳季。
+部分古道與產業道路重疊，仍可見山友布條與隱密林徑。地方居民與團體近年整修步道，推廣插秧體驗與米食文化，讓這片山谷再現活力。如今的向天湖，是融合自然、生態與歷史的農村聚落，等待旅人踏上古道、細細體會山居歲月的美好。
+`,
+      en: `Xiangtian Hu is located on the northern slope of Bijiashan Mountain, east of Arouyang Industrial Road, at an altitude of about 200 meters. The area is higher around the edges and lower in the center, where former rice paddies once reflected the sky like a lake, hence the name 'Xiangtian Hu' ("Lake Reflecting the Sky").The region still retains its traditional rural landscape, with rice, vegetables, and bamboo shoots being cultivated, offering changing pastoral beauty across the seasons. Every spring, fireflies dance under the night sky, while bamboo groves and terraced fields irrigated by mountain springs paint a picture of rustic tranquility. During planting and harvest seasons, neighbors help each other, fostering a strong sense of community.The Gao family ancestors migrated here from Mazhuliao, developing a settlement centered around tea, rice, and fruit cultivation. Centuries-old red brick houses and stone cottages are still inhabited today, preserving memories of the old days. The Xiangtian Hu Ancient Trail leading to the settlement was once an everyday path for students and farmers. It winds along creeks, through forests, and across stone bridges, rich with biodiversity — home to the Emerald Tree Frog, Taiwan Blue Magpie, and Collared Scops Owl. March to May is the prime firefly-watching season.Some sections of the ancient trail overlap with industrial roads, where hikers' ribbons and hidden forest paths can still be seen. Local residents and groups have recently been restoring the trail and promoting rice-planting experiences and food culture, bringing new vitality to this mountain valley. Today, Xiangtian Hu is a rural village where nature, ecology, and history intertwine, waiting for travelers to walk its ancient paths and savor the beauty of life in the mountains.`
+    },
+    lat: 550,
+    lng: 600,
+    category: "hiking",
+    mission: {
+      zh: "找到最像「湖中」的構圖點拍照！",
+      en: "Find the best spot that looks like you’re standing 'in the middle of a lake' and take a photo!"
+    },
+    quiz: {
+      question: {
+        zh: "向天湖名字的由來是什麼？",
+        en: "How did Xiangtianhu get its name?"
+      },
+      options: [
+        {
+          zh: "湖泊遺址",
+          en: "Ancient lake site"
+        },
+        {
+          zh: "山泉湧出地",
+          en: "Spring source"
+        },
+        {
+          zh: "水田映光似湖",
+          en: "Water-filled rice fields reflecting like a lake"
+        },
+        {
+          zh: "傳說故事",
+          en: "Folk legend"
+        }
+      ],
+      correctAnswer: 2
+    }
+  },
+  {
+    id: 11,
+    name: {
+      zh: "阿柔洋產業道路｜四季皆美的緩升坡天堂",
+      en: "Arouyang Industrial Road｜A Gentle Slope with Beautiful Scenery in all Seasons"
+    },
+    description: {
+      zh: "阿柔洋產業道路四季皆有不同風貌，春櫻綻放、夏日翠綠、秋季迷人、冬晨雲霧繚繞，變化萬千，景色迷人。這條道路是單車愛好者必訪之地，以其綿延的緩升坡聞名，挑戰體力之餘，也能欣賞沿途壯闊山景與純樸田野風光。",
+      en: "The Arouyang Industrial Road showcases different scenery in every season — cherry blossoms in spring, lush greens in summer, enchanting views in autumn, and misty mornings in winter, each offering a unique charm."
+    },
+    fullDescription: {
+      zh: `阿柔洋產業道路四季皆有不同風貌，春櫻綻放、夏日翠綠、秋季迷人、冬晨雲霧繚繞，變化萬千，景色迷人。這條道路是單車愛好者必訪之地，以其綿延的緩升坡聞名，挑戰體力之餘，也能欣賞沿途壯闊山景與純樸田野風光。
+
+沿途可見茶園、竹林與果園，不時有農家販售當季水果與蔬菜，讓騎行更添風味。道路兩側樹木成蔭，即使盛夏騎行也不覺炎熱。每到春季，櫻花盛開時節，粉色花瓣隨風飄落，宛如置身日本。秋季則有楓葉與芒草，冬日清晨則可見雲海與霧氣，如臨仙境。
+
+這條產業道路不僅連接著各個茶園與農地，也串起了在地人的生活與回憶。對單車愛好者而言，這裡的緩升坡路段提供了絕佳的訓練場地，挑戰自我的同時，還能享受沿途美景，實為一舉兩得。`,
+      en: `The Arouyang Industrial Road showcases different scenery in every season — cherry blossoms in spring, lush greens in summer, enchanting views in autumn, and misty mornings in winter, each offering a unique charm. This road is a must-visit for cycling enthusiasts, renowned for its long, gentle uphill slopes. While challenging one's stamina, it also rewards riders with stunning mountain views and idyllic countryside landscapes.
+
+Along the way, you'll see tea plantations, bamboo groves, and orchards, with occasional farm stands selling seasonal fruits and vegetables, adding flavor to your ride. Trees line both sides of the road, providing shade even during the hot summer months. Every spring, when cherry blossoms bloom, pink petals float in the wind, creating a scene reminiscent of Japan. Autumn brings maple leaves and pampas grass, while winter mornings offer views of sea clouds and mist, like stepping into a fairyland.
+
+This industrial road not only connects various tea gardens and farmlands but also links the lives and memories of local people. For cycling enthusiasts, the gentle uphill sections provide an excellent training ground, challenging oneself while enjoying the beautiful scenery along the way — truly killing two birds with one stone.`
+    },
+    lat: 620,
+    lng: 520,
+    category: "story",
+    mission: {
+      zh: "用一張照片呈現你眼中的「阿柔四季」。",
+      en: "Take a photo of \"the Four Seasons of Arouyang\" in your eyes."
+    },
+    quiz: {
+      question: {
+        zh: "這條路線為什麼受單車族喜愛？",
+        en: "Why is this route loved by cyclists?"
+      },
+      options: [
+        {
+          zh: "沒有車",
+          en: "No cars"
+        },
+        {
+          zh: "餐廳多",
+          en: "Lots of restaurants"
+        },
+        {
+          zh: "緩升坡＋好景色",
+          en: "Gentle slopes and great scenery"
+        },
+        {
+          zh: "有茶可以喝",
+          en: "Free tea along the way"
+        }
+      ],
+      correctAnswer: 2
+    }
+  },
+  {
+    id: 12,
+    name: {
+      zh: "加爾默羅修道院｜靜默中的聖衣生活",
+      en: "Carmelite Monastery｜Sacred Life in Silence"
+    },
+    description: {
+      zh: "位在寧靜的深山中的加爾默羅聖母聖衣隱修院，為天主教最嚴格的隱修院之一。在靜默中祈禱，隱修女度著靜默生活，終身奉獻，祈禱刻苦、也透過彼此相互祈禱，使她們之間的生命更加緊密地連結在一起。",
+      en: "Nestled deep in the mountains, the Carmelite Monastery of Our Lady of Mount Carmel is one of the strictest Catholic cloistered convents. The nuns live a life of silence and prayer, dedicating their entire lives to spiritual devotion."
+    },
+    fullDescription: {
+      zh: `位在寧靜的深山中的加爾默羅聖母聖衣隱修院，為天主教最嚴格的隱修院之一。在靜默中祈禱，隱修女度著靜默生活，終身奉獻，祈禱刻苦、也透過彼此相互祈禱，使她們之間的生命更加緊密地連結在一起。
+
+修道院建築莊嚴肅穆，遠離塵囂，四周環繞著蒼翠的山林，空氣清新，鳥語花香。修女們過著簡樸的生活，每日按時祈禱、勞動與靜思，遵循嚴格的修道規則。她們與外界的接觸極為有限，專注於靈性的提升與對上帝的奉獻。
+
+雖然修道院不對外開放參觀，但遊客可在外圍欣賞其建築之美，感受那份寧靜與神聖。每逢主日，修道院的鐘聲迴盪在山谷間，傳遞著信仰的力量與希望。`,
+      en: `Nestled deep in the mountains, the Carmelite Monastery of Our Lady of Mount Carmel is one of the strictest Catholic cloistered convents. The nuns live a life of silence and prayer, dedicating their entire lives to spiritual devotion. Through continuous prayer and mutual spiritual support, their lives become deeply intertwined in faith.
+
+The monastery building is solemn and dignified, far from the hustle and bustle of the world, surrounded by lush mountains and forests, with fresh air and the sounds of birds and flowers. The nuns live a simple life, praying, working, and contemplating at set times each day, following strict monastic rules. Their contact with the outside world is extremely limited, focusing on spiritual elevation and dedication to God.
+
+Although the monastery is not open to visitors, tourists can admire the beauty of its architecture from the outside and feel the tranquility and sacredness. Every Sunday, the bells of the monastery echo through the valley, conveying the power and hope of faith.`
+    },
+    lat: 480,
+    lng: 580,
+    category: "story",
+    mission: {
+      zh: "從遠方拍下修道院剪影，寫下「你覺得沈默代表什麼」",
+      en: "Take a photo of the silhouette of the monastery from a distance and write down: \"What does silence mean to you?\""
+    },
+    quiz: {
+      question: {
+        zh: "加爾默羅修女的特色是？",
+        en: "What is the key feature of Carmelite nuns?"
+      },
+      options: [
+        {
+          zh: "每日佈道",
+          en: "Daily preaching"
+        },
+        {
+          zh: "勤耕農作",
+          en: "Hardworking farmers"
+        },
+        {
+          zh: "終身靜默祈禱",
+          en: "Lifelong silent prayer"
+        },
+        {
+          zh: "製作蠟燭",
+          en: "Candle making"
+        }
+      ],
+      correctAnswer: 2
+    }
+  },
+  {
+    id: 13,
+    name: {
+      zh: "驪山老母無極慈母宮｜夢中神諭的信仰之所",
+      en: "Mount Li Laomu Wuji Cimu Temple｜A Place of Faith from Dream Oracles"
+    },
+    description: {
+      zh: "創建於民國九十年，主祀驪山老母，奉祀太上道祖。驪山老母為道教女仙，常指點迷津、傳授秘籍，深受信眾崇敬，民間影響深遠。蔡貴德宮主因夢中多次感應，依神示雕塑聖像，並擇吉日開光奉祀。",
+      en: "Founded in 2001, this temple venerates Mount Li Old Mother and the Supreme Daoist Patriarch. Mount Li Old Mother is a Daoist female deity known for offering guidance and secret teachings, deeply revered among believers and widely influential in folk traditions."
+    },
+    fullDescription: {
+      zh: `創建於民國九十年，主祀驪山老母，奉祀太上道祖。驪山老母為道教女仙，常指點迷津、傳授秘籍，深受信眾崇敬，民間影響深遠。蔡貴德宮主因夢中多次感應，依神示雕塑聖像，並擇吉日開光奉祀。
+
+廟宇建築金碧輝煌，雕樑畫棟，處處展現精湛的工藝。主殿供奉驪山老母金身，兩側有太上道祖與諸神仙。廟內常年香火鼎盛，信眾絡繹不絕，祈求平安、健康與事業順利。
+
+每年農曆三月十五日為驪山老母聖誕，廟方會舉辦盛大慶典，包括祭祀、戲曲表演與民俗活動，吸引眾多信眾參與。廟宇周圍環境優美，視野開闊，是信仰與休閒兼具的好去處。`,
+      en: `Founded in 2001, this temple venerates Mount Li Old Mother and the Supreme Daoist Patriarch. Mount Li Old Mother is a Daoist female deity known for offering guidance and secret teachings, deeply revered among believers and widely influential in folk traditions. The temple master Cai Guide was inspired by repeated dreams to sculpt the sacred statue and selected an auspicious date for the temple's consecration.
+
+The temple architecture is magnificent, with carved beams and painted rafters, showcasing exquisite craftsmanship throughout. The main hall houses the golden statue of Mount Li Old Mother, with the Supreme Daoist Patriarch and other deities on either side. The temple is bustling with worshippers year-round, praying for peace, health, and success in their careers.
+
+The birthday of Mount Li Old Mother falls on the fifteenth day of the third lunar month, when the temple holds grand celebrations, including sacrifices, opera performances, and folk activities, attracting many believers. The surroundings of the temple are beautiful, with an open view, making it a great place for both faith and leisure.`
+    },
+    lat: 400,
+    lng: 520,
+    category: "story",
+    mission: {
+      zh: "寫下一個你想祈求「慈母」的心願。",
+      en: "Write down a heartfelt wish you would like to ask of \"Wuji Cimu.\""
+    },
+    quiz: {
+      question: {
+        zh: "驪山老母是什麼信仰體系？",
+        en: "What religious system does Mount Li Mother belong to?"
+      },
+      options: [
+        {
+          zh: "佛教",
+          en: "Buddhism"
+        },
+        {
+          zh: "道教女仙",
+          en: "Daoist female deity"
+        },
+        {
+          zh: "天主教",
+          en: "Catholicism"
+        },
+        {
+          zh: "民間鬼神",
+          en: "Folk ghosts and spirits"
+        }
+      ],
+      correctAnswer: 1
+    }
+  },
+  {
+    id: 14,
+    name: {
+      zh: "新北台北縣市交會處｜一步之差的城市界線",
+      en: "The Border of New Taipei and Taipei Cities｜A Boundary between Cities in One Step"
+    },
+    description: {
+      zh: "深坑與文山僅一步之遙，穿越林間古道，即是行政分界。過了這條線，風景與文化也悄悄轉換。",
+      en: "Shenkeng and Wenshan Districts are just one step apart; crossing the ancient forest trail brings you across the administrative border. As you cross this line, the scenery and local culture subtly shift as well."
+    },
+    fullDescription: {
+      zh: `深坑與文山僅一步之遙，穿越林間古道，即是行政分界。過了這條線，風景與文化也悄悄轉換。
+
+這個交會點位於24°58'24.2"N 121°36'52.3"E，是新北市深坑區與台北市文山區的分界線。站在這裡，一腳踏在新北市，另一腳則在台北市，彷彿跨越了兩個世界。這條界線沿著山脊延伸，周圍樹木蔥鬱，空氣清新，是健行愛好者的秘密景點。
+
+從這裡可以眺望兩市的不同風貌，一邊是深坑的丘陵與茶園，另一邊則是文山的都市景觀。這個地點不僅是地理上的分界，也象徵著都市與鄉村的交融，展現了台灣多元的地貌與文化。`,
+      en: `Shenkeng and Wenshan Districts are just one step apart; crossing the ancient forest trail brings you across the administrative border. As you cross this line, the scenery and local culture subtly shift as well.
+
+This meeting point is located at 24°58'24.2"N 121°36'52.3"E, marking the boundary between Shenkeng District of New Taipei City and Wenshan District of Taipei City. Standing here, with one foot in New Taipei City and the other in Taipei City, it feels like straddling two worlds. This boundary line extends along the ridge, surrounded by lush trees and fresh air, a secret spot for hiking enthusiasts.
+
+From here, you can overlook the different landscapes of the two cities — the hills and tea gardens of Shenkeng on one side, and the urban landscape of Wenshan on the other. This location is not only a geographical boundary but also symbolizes the fusion of urban and rural areas, showcasing Taiwan's diverse topography and culture.`
+    },
+    lat: 450,
+    lng: 450,
+    category: "story",
+    mission: {
+      zh: "用腳站在「一邊新北、一邊台北」拍照。",
+      en: "Stand with one foot in New Taipei and the other in Taipei, and take a photo!"
+    },
+    quiz: {
+      question: {
+        zh: "哪兩地在這條線上相連？",
+        en: "Which two places are connected on this line?"
+      },
+      options: [
+        {
+          zh: "士林與深坑",
+          en: "Shilin and Shenkeng"
+        },
+        {
+          zh: "汐止與新店",
+          en: "Xizhi and Xindian"
+        },
+        {
+          zh: "木柵與深坑",
+          en: "Muzha and Shenkeng"
+        },
+        {
+          zh: "南港與文山",
+          en: "Nangang and Wenshan"
+        }
+      ],
+      correctAnswer: 2
+    }
+  },
 ];
 
 export default spots;
