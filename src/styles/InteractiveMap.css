@@ -167,3 +167,42 @@
 .custom-info-window .view-details:hover {
   background-color: #3a7030;
 }
+
+/* 平板和移動設備的響應式設計 */
+@media (max-width: 1024px) {
+  .map-marker {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .marker-title {
+    font-size: 12px;
+    padding: 3px 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .map-marker {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .simulated-map-background {
+    background-size: cover;
+  }
+  
+  .marker-title {
+    font-size: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-marker {
+    width: 25px;
+    height: 25px;
+  }
+}

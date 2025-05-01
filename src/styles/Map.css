@@ -334,6 +334,23 @@
 }
 
 @media (max-width: 768px) {
+  .map-page {
+    height: calc(100vh - 100px);
+    min-height: 500px;
+  }
+  
+  .map-section {
+    flex-direction: column;
+  }
+  
+  .map-container {
+    height: 350px;
+  }
+  
+  .spots-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  
   .spot-card {
     position: fixed;
     bottom: 0;
@@ -341,5 +358,15 @@
     left: 0;
     max-width: 100%;
     border-radius: 12px 12px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .map-container {
+    height: 300px;
+  }
+  
+  .spots-grid {
+    grid-template-columns: 1fr;
   }
 }
