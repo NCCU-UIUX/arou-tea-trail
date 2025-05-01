@@ -2,9 +2,67 @@ import React, { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import '../styles/ThemeExplore.css';
 import spotsData from '../data/spots';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const ThemeExplore = () => {
   const location = useLocation();
+  const { language } = useLanguage();
+  
+  // 自定義翻譯函數
+  const t = (key, defaultText) => {
+    const translations = {
+      'themes.tea': {
+        zh: '茶文化體驗',
+        en: 'Tea Culture Experience'
+      },
+      'themes.family': {
+        zh: '親子輕鬆路線',
+        en: 'Family-Friendly Routes'
+      },
+      'themes.hiking': {
+        zh: '健行挑戰之路',
+        en: 'Hiking Challenge Routes'
+      },
+      'themes.story': {
+        zh: '故事深度探索',
+        en: 'Deep Story Exploration'
+      },
+      'themes.teaDescription': {
+        zh: '探索阿柔茶的製作工藝與文化底蘊，親手體驗採茶、製茶的樂趣。',
+        en: 'Explore the craftsmanship and cultural heritage of Arou tea, and experience the joy of picking and making tea.'
+      },
+      'themes.familyDescription': {
+        zh: '適合全家大小的輕鬆路線，沿途有趣味互動與休憩空間。',
+        en: 'A relaxing route suitable for the whole family, with interesting interactions and rest areas along the way.'
+      },
+      'themes.hikingDescription': {
+        zh: '挑戰您的體能與毅力，探索阿柔山區的自然風光與生態環境。',
+        en: 'Challenge your physical strength and perseverance, and explore the natural scenery and ecological environment of Arou mountain area.'
+      },
+      'themes.storyDescription': {
+        zh: '深入了解阿柔茶的歷史故事與人文風情，聆聽茶農的生活點滴。',
+        en: 'Learn about the history and cultural customs of Arou tea, and listen to the life stories of tea farmers.'
+      },
+      'themes.details': {
+        zh: '詳細資訊',
+        en: 'Details'
+      },
+      'themes.viewOnMap': {
+        zh: '在地圖上查看',
+        en: 'View on Map'
+      },
+      'map.checkInMission': {
+        zh: '打卡任務',
+        en: 'Check-in Mission'
+      },
+      'map.interactiveQuiz': {
+        zh: '互動題目',
+        en: 'Interactive Quiz'
+      }
+    };
+    
+    return translations[key]?.[language] || defaultText || key;
+  };
   const [activeTheme, setActiveTheme] = useState('tea');
   const [expandedSpot, setExpandedSpot] = useState(null);
   
@@ -35,13 +93,13 @@ const ThemeExplore = () => {
   const getThemeTitle = () => {
     switch (activeTheme) {
       case 'tea':
-        return '茶文化體驗';
+        return t('themes.tea', '茶文化體驗');
       case 'family':
-        return '親子輕鬆路線';
+        return t('themes.family', '親子輕鬆路線');
       case 'hiking':
-        return '健行挑戰之路';
+        return t('themes.hiking', '健行挑戰之路');
       case 'story':
-        return '故事深度探索';
+        return t('themes.story', '故事深度探索');
       default:
         return '';
     }
@@ -50,13 +108,13 @@ const ThemeExplore = () => {
   const getThemeDescription = () => {
     switch (activeTheme) {
       case 'tea':
-        return '探索百年茶園，品味阿柔茶文化的獨特魅力，體驗傳統製茶工藝。';
+        return t('themes.teaDescription', '探索阿柔茶的製作工藝與文化底蘊，親手體驗採茶、製茶的樂趣。');
       case 'family':
-        return '適合全家同行的輕鬆步道，自然教育的最佳選擇，孩子們的戶外樂園。';
+        return t('themes.familyDescription', '適合全家大小的輕鬆路線，沿途有趣味互動與休憩空間。');
       case 'hiking':
-        return '挑戰自我，感受山林之美與身心靈的洗滌，各種難度的健行路線。';
+        return t('themes.hikingDescription', '挑戰您的體能與毅力，探索阿柔山區的自然風光與生態環境。');
       case 'story':
-        return '深入了解阿柔的歷史文化與在地故事，探訪古蹟與信仰中心。';
+        return t('themes.storyDescription', '深入了解阿柔茶的歷史故事與人文風情，聆聽茶農的生活點滴。');
       default:
         return '';
     }
@@ -69,25 +127,25 @@ const ThemeExplore = () => {
           className={`theme-tab ${activeTheme === 'tea' ? 'active' : ''}`}
           onClick={() => handleThemeChange('tea')}
         >
-          茶文化體驗
+          {t('themes.tea')}
         </button>
         <button 
           className={`theme-tab ${activeTheme === 'family' ? 'active' : ''}`}
           onClick={() => handleThemeChange('family')}
         >
-          親子輕鬆路線
+          {t('themes.family')}
         </button>
         <button 
           className={`theme-tab ${activeTheme === 'hiking' ? 'active' : ''}`}
           onClick={() => handleThemeChange('hiking')}
         >
-          健行挑戰之路
+          {t('themes.hiking')}
         </button>
         <button 
           className={`theme-tab ${activeTheme === 'story' ? 'active' : ''}`}
           onClick={() => handleThemeChange('story')}
         >
-          故事深度探索
+          {t('themes.story')}
         </button>
       </div>
       
@@ -107,7 +165,7 @@ const ThemeExplore = () => {
                 className="spot-header"
                 onClick={() => toggleSpotExpand(spot.id)}
               >
-                <h3>{spot.name}</h3>
+                <h3>{spot.name && (spot.name[language] || spot.name.zh || '')}</h3>
                 <span className="expand-icon">
                   {expandedSpot === spot.id ? '−' : '+'}
                 </span>
@@ -116,36 +174,41 @@ const ThemeExplore = () => {
               {expandedSpot === spot.id && (
                 <div className="spot-details">
                   <div className="spot-image" style={{backgroundColor: '#e6f2e6'}}></div>
-                  <p className="spot-description">{spot.description}</p>
+                  <p className="spot-description">{spot.description && (spot.description[language] || spot.description.zh || '')}</p>
                   
                   <div className="spot-info-container">
                     <div className="spot-info">
-                      <h4>打卡任務</h4>
-                      <p>{spot.mission}</p>
+                      <h4>{t('map.checkInMission', '打卡任務')}</h4>
+                      <p>{spot.mission && (spot.mission[language] || spot.mission.zh || '')}</p>
                     </div>
                     
                     <div className="spot-info">
-                      <h4>互動題目</h4>
-                      <p>{spot.quiz.question}</p>
+                      <h4>{t('map.interactiveQuiz', '互動題目')}</h4>
+                      <p>{spot.quiz && spot.quiz.question && (spot.quiz.question[language] || spot.quiz.question.zh || '')}</p>
                       <ul className="quiz-options">
-                        {spot.quiz.options.map((option, index) => (
-                          <li key={index}>
-                            {String.fromCharCode(65 + index)}. {option}
-                            {index === spot.quiz.correctAnswer && (
-                              <span className="correct-answer"> ✓</span>
-                            )}
-                          </li>
-                        ))}
+                        {spot.quiz && spot.quiz.options && spot.quiz.options.map((option, index) => {
+                          // Safely extract the option text based on current language
+                          const optionText = option && (option[language] || option.zh || '');
+                          
+                          return (
+                            <li key={index}>
+                              {String.fromCharCode(65 + index)}. {optionText}
+                              {index === spot.quiz.correctAnswer && (
+                                <span className="correct-answer"> ✓</span>
+                              )}
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
                   
                   <div className="spot-actions">
                     <Link to={`/spot/${spot.id}`} className="btn btn-primary">
-                      詳細資訊
+                      {t('themes.details', '詳細資訊')}
                     </Link>
-                    <Link to={`/map?spot=${spot.id}`} className="btn btn-secondary">
-                      在地圖上查看
+                    <Link to={`/map?spotId=${spot.id}`} className="btn btn-secondary">
+                      {t('themes.viewOnMap', '在地圖上查看')}
                     </Link>
                   </div>
                 </div>

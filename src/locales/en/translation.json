@@ -1,0 +1,103 @@
+{
+  "navbar": {
+    "logo": "Arou Tea Trail",
+    "map": "Interactive Map",
+    "explore": "Explore by Theme",
+    "missions": "My Check-ins",
+    "about": "About Arou"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "home": {
+    "title": "Arou Tea Trail",
+    "subtitle": "Explore the tea mountains and experience the perfect blend of nature and culture",
+    "explore": "Start Exploring!",
+    "featuredSpots": "Featured Spots",
+    "learnMore": "Learn More"
+  },
+  "about": {
+    "title": "About Arou",
+    "history": "History",
+    "culture": "Culture",
+    "community": "Community",
+    "pageTitle": "About Arou Tea Trail",
+    "historyTitle": "History and Culture",
+    "historyPara1": "Arou Tea Trail is located in the northern mountains of Taiwan, with over a century of tea cultivation history. Early settlers developed the area, taking advantage of the unique climate and soil conditions to grow high-quality tea. As times changed, local residents worked to preserve traditional tea-making crafts while incorporating modern innovations, allowing Arou tea culture to continue and flourish.",
+    "historyPara2": "The trail preserves many historical sites, including ancient stone steps, traditional tea factories, and traces of early settlers' lives, making it an important venue for understanding the development of Taiwan's tea culture.",
+    "clickHint": "Click to view the location of ancient stone steps on the map",
+    "natureTitle": "Natural Ecology",
+    "naturePara1": "The Arou trail environment is diverse, from low-altitude tea gardens to high-altitude primary forests, nurturing a rich ecosystem. This is home to many species of birds, insects, and plants, presenting different scenery throughout the four seasons.",
+    "forestClickHint": "Click to view the forest adventure area on the map",
+    "naturePara2": "In spring, tea flowers bloom; in summer, lush greenery abounds; in autumn, maple leaves turn red; and in winter, there are spectacular cloud seas. There are many ecological interpretation signs along the way, allowing visitors to increase their understanding and respect for nature while hiking.",
+    "experienceTitle": "Experience Activities",
+    "experiencePara": "Arou Tea Trail offers diverse experiences, from tea picking and tea-making crafts to tea tasting, allowing visitors to deeply understand the complete process of tea from planting to drinking. In addition, the trail regularly holds cultural lectures, art exhibitions, and seasonal activities to enrich visitors' travel experiences.",
+    "teaClickHint": "Click to view the tea workshop location on the map",
+    "communityTitle": "Community Building",
+    "communityPara1": "The maintenance and development of Arou Tea Trail cannot be separated from the joint efforts of local community residents. In recent years, with the assistance of government and private organizations, residents have actively participated in trail renovation, guide training, and cultural activities, giving this century-old trail new life.",
+    "communityPara2": "Through community building, not only has the quality of life of local residents been improved, but it has also created a richer, more in-depth travel experience for visitors. Every visitor to Arou can feel the enthusiasm of the residents and their pride in this land.",
+    "visitInfo": "Visiting Information",
+    "openingHours": "Opening Hours",
+    "hoursDetail": "Open all year, recommended to visit from sunrise to sunset",
+    "transportation": "Transportation",
+    "publicTransport": "Public transportation: Take the bus to Arou station, 10 minutes walk to reach",
+    "drivingInfo": "Self-driving: Navigate to 'Arou Tea Culture Trail Visitor Center', free parking available",
+    "notices": "Notices",
+    "notice1": "Please bring your own water and sun protection",
+    "notice2": "Please do not feed wildlife",
+    "notice3": "Please take your trash with you when leaving the trail",
+    "contactUs": "Contact Us",
+    "phone": "Phone: 02-XXXX-XXXX",
+    "email": "Email: info@arouteatrail.tw",
+    "readyToExplore": "Ready to explore Arou Tea Trail?",
+    "startTour": "Start the guided tour"
+  },
+  "map": {
+    "title": "Interactive Map",
+    "search": "Search locations",
+    "categories": "Categories",
+    "mapTitle": "Arou Tea Trail Map",
+    "spotsList": "Spots List",
+    "clickToView": "Click on spots below to view details",
+    "filterAll": "All",
+    "filterTea": "Tea Gardens",
+    "filterFamily": "Family",
+    "filterHiking": "Hiking",
+    "filterStory": "Story Exploration",
+    "categoryTea": "Tea Culture Experience",
+    "categoryFamily": "Family Routes",
+    "categoryHiking": "Hiking Challenge",
+    "categoryStory": "Story Exploration",
+    "checkInMission": "Check-in Mission",
+    "completeMission": "Complete Mission",
+    "interactiveQuiz": "Interactive Quiz"
+  },
+  "themes": {
+    "title": "Explore by Theme",
+    "tea": "Tea Culture Experience",
+    "teaDescription": "Explore century-old tea gardens and taste the unique charm of Arou tea culture, experience traditional tea-making crafts.",
+    "hiking": "Hiking Challenge Routes",
+    "hikingDescription": "Challenge yourself and feel the beauty of the mountains and the cleansing of body and mind, with various difficulty levels of hiking routes.",
+    "story": "Deep Story Exploration",
+    "storyDescription": "Gain a deeper understanding of Arou's history, culture, and local stories, visit historical sites and centers of faith.",
+    "family": "Family-Friendly Routes",
+    "familyDescription": "Easy trails suitable for the whole family, the best choice for nature education, an outdoor playground for children.",
+    "details": "Details",
+    "viewOnMap": "View on Map"
+  },
+  "missions": {
+    "title": "My Check-ins",
+    "completed": "Completed",
+    "inProgress": "In Progress",
+    "rewards": "Rewards"
+  },
+  "spot": {
+    "details": "Details",
+    "location": "Location",
+    "hours": "Opening Hours",
+    "contact": "Contact",
+    "relatedSpots": "Related Spots",
+    "checkIn": "Check In"
+  }
+}

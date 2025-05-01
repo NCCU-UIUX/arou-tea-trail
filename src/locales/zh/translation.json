@@ -1,0 +1,103 @@
+{
+  "navbar": {
+    "logo": "阿柔茶文化步道",
+    "map": "互動導覽地圖",
+    "explore": "景點分類導覽",
+    "missions": "我的打卡紀錄",
+    "about": "關於阿柔"
+  },
+  "language": {
+    "en": "English",
+    "zh": "中文"
+  },
+  "home": {
+    "title": "阿柔茶文化步道",
+    "subtitle": "探索茶香山林，體驗自然與文化的完美融合",
+    "explore": "開始探索！",
+    "featuredSpots": "熱門景點",
+    "learnMore": "了解更多"
+  },
+  "about": {
+    "title": "關於阿柔",
+    "history": "歷史",
+    "culture": "文化",
+    "community": "社區",
+    "pageTitle": "關於阿柔茶文化步道",
+    "historyTitle": "歷史與文化",
+    "historyPara1": "阿柔茶文化步道位於台灣北部山區，擁有超過百年的茶葉種植歷史。早期先民在此開墾，利用得天獨厚的氣候與土壤條件，種植出品質優良的茶葉。隨著時代變遷，當地居民致力於保存傳統製茶工藝，同時融入現代創新元素，讓阿柔茶文化持續傳承並發揚光大。",
+    "historyPara2": "步道沿線保留了許多歷史遺跡，包括古老的石階、傳統茶廠以及先民生活痕跡，是了解台灣茶文化發展的重要場域。",
+    "clickHint": "點擊查看古道石階地圖位置",
+    "natureTitle": "自然生態",
+    "naturePara1": "阿柔步道環境多樣，從低海拔的茶園到高處的原始森林，孕育了豐富的生態系統。這裡是多種鳥類、昆蟲和植物的棲息地，四季呈現不同風貌。",
+    "forestClickHint": "點擊查看森林探險區地圖位置",
+    "naturePara2": "春季可見茶花盛開，夏季綠意盎然，秋季楓葉轉紅，冬季則有雲海奇景。沿途設有多處生態解說牌，讓遊客在健行的同時，也能增進對自然的認識與尊重。",
+    "experienceTitle": "體驗活動",
+    "experiencePara": "阿柔茶文化步道提供多元的體驗活動，從茶葉採摘、製茶工藝到茶席品茗，讓遊客深入了解茶葉從種植到飲用的完整過程。此外，步道也定期舉辦文化講座、藝術展覽和季節性活動，豐富遊客的旅遊體驗。",
+    "teaClickHint": "點擊查看茶葉製作坊地圖位置",
+    "communityTitle": "社區營造",
+    "communityPara1": "阿柔茶文化步道的維護與發展，離不開當地社區居民的共同努力。近年來，在政府與民間組織的協助下，居民積極參與步道整建、導覽解說培訓以及文化活動舉辦，讓這條百年步道煥發新生。",
+    "communityPara2": "透過社區營造，不僅提升了當地居民的生活品質，也為遊客創造了更豐富、更有深度的旅遊體驗。每一位來到阿柔的遊客，都能感受到居民的熱情與對這片土地的驕傲。",
+    "visitInfo": "參訪資訊",
+    "openingHours": "開放時間",
+    "hoursDetail": "全年開放，建議日出至日落期間前往",
+    "transportation": "交通方式",
+    "publicTransport": "大眾運輸：搭乘公車至阿柔站下車，步行10分鐘可達",
+    "drivingInfo": "自行開車：導航至「阿柔茶文化步道遊客中心」，有免費停車場",
+    "notices": "注意事項",
+    "notice1": "請自備飲水及防曬用品",
+    "notice2": "請勿餵食野生動物",
+    "notice3": "請將垃圾帶離步道",
+    "contactUs": "聯絡我們",
+    "phone": "電話：02-XXXX-XXXX",
+    "email": "Email：info@arouteatrail.tw",
+    "readyToExplore": "準備好探索阿柔茶文化步道了嗎？",
+    "startTour": "開始導覽之旅"
+  },
+  "map": {
+    "title": "互動導覽地圖",
+    "search": "搜尋地點",
+    "categories": "分類",
+    "mapTitle": "阿柔茶文化步道地圖",
+    "spotsList": "景點列表",
+    "clickToView": "點擊下方景點查看詳細資訊",
+    "filterAll": "全部",
+    "filterTea": "茶園",
+    "filterFamily": "親子",
+    "filterHiking": "健行",
+    "filterStory": "故事探索",
+    "categoryTea": "茶文化體驗",
+    "categoryFamily": "親子路線",
+    "categoryHiking": "健行挑戰",
+    "categoryStory": "故事探索",
+    "checkInMission": "打卡任務",
+    "completeMission": "完成任務",
+    "interactiveQuiz": "互動題目"
+  },
+  "themes": {
+    "title": "探索主題",
+    "tea": "茶文化體驗",
+    "teaDescription": "探索百年茶園，品味阿柔茶文化的獨特魅力，體驗傳統製茶工藝。",
+    "hiking": "健行挑戰之路",
+    "hikingDescription": "挑戰自我，感受山林之美與身心靈的洗滌，各種難度的健行路線。",
+    "story": "故事深度探索",
+    "storyDescription": "深入了解阿柔的歷史文化與在地故事，探訪古蹟與信仰中心。",
+    "family": "親子輕鬆路線",
+    "familyDescription": "適合全家同行的輕鬆步道，自然教育的最佳選擇，孩子們的戶外樂園。",
+    "details": "詳細資訊",
+    "viewOnMap": "在地圖上查看"
+  },
+  "missions": {
+    "title": "我的打卡紀錄",
+    "completed": "已完成",
+    "inProgress": "進行中",
+    "rewards": "獎勵"
+  },
+  "spot": {
+    "details": "詳細資訊",
+    "location": "位置",
+    "hours": "營業時間",
+    "contact": "聯絡方式",
+    "relatedSpots": "相關景點",
+    "checkIn": "打卡"
+  }
+}
