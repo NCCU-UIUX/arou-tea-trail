@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../styles/MyMissions.css';
-import spotsData from '../data/spots';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useMission } from '../contexts/MissionContext';
 
 const MyMissions = () => {
-  const [completedMissions, setCompletedMissions] = useState([]);
   const [activeTab, setActiveTab] = useState('missions');
   const { language } = useLanguage();
+  const { 
+    completedMissions, 
+    completeRandomMission, 
+    getMissionProgress, 
+    getBadgeStatus,
+    getAllMissionsWithStatus,
+    resetAllMissions
+  } = useMission();
   
   // 自定義翻譯函數
   const t = (key, defaultText) => {
@@ -96,40 +103,17 @@ const MyMissions = () => {
     return translations[key]?.[language] || defaultText || key;
   };
   
-  // Load completed missions from localStorage on component mount
-  useEffect(() => {
-    const savedMissions = localStorage.getItem('completedMissions');
-    if (savedMissions) {
-      setCompletedMissions(JSON.parse(savedMissions));
-    }
-  }, []);
+  // No need to load from localStorage - handled by MissionContext
   
-  // For demo purposes, let's add a function to complete a random mission
-  const completeRandomMission = () => {
-    // Get all spot IDs that haven't been completed yet
-    const incompleteMissions = spotsData
-      .filter(spot => !completedMissions.includes(spot.id))
-      .map(spot => spot.id);
-    
-    if (incompleteMissions.length > 0) {
-      // Select a random spot ID from incomplete missions
-      const randomIndex = Math.floor(Math.random() * incompleteMissions.length);
-      const newMissionId = incompleteMissions[randomIndex];
-      
-      // Add to completed missions
-      const updatedMissions = [...completedMissions, newMissionId];
-      setCompletedMissions(updatedMissions);
-      
-      // Save to localStorage
-      localStorage.setItem('completedMissions', JSON.stringify(updatedMissions));
-    }
-  };
+  // completeRandomMission is now provided by MissionContext
   
-  // Calculate progress
-  const progress = Math.round((completedMissions.length / spotsData.length) * 100);
+  // Get progress from MissionContext
+  const progress = getMissionProgress();
   
-  // Get completed spots data
-  const completedSpots = spotsData.filter(spot => completedMissions.includes(spot.id));
+  // Get badge status
+  const badgeStatus = getBadgeStatus();
+  
+  // No need to get completed spots data separately as we're using getAllMissionsWithStatus directly
   
   return (
     <div className="my-missions">
@@ -146,7 +130,7 @@ const MyMissions = () => {
           ></div>
         </div>
         <div className="progress-text">
-          {t('missions.progress', '已完成')} {completedMissions.length} / {spotsData.length} {t('missions.spots', '個景點')} ({progress}%)
+          {t('missions.progress', '已完成')} {completedMissions.length} / {getAllMissionsWithStatus().length} {t('missions.spots', '個景點')} ({progress}%)
         </div>
       </div>
       
@@ -167,15 +151,14 @@ const MyMissions = () => {
       
       {activeTab === 'missions' && (
         <div className="missions-list">
-          {spotsData.map(spot => {
-            const isCompleted = completedMissions.includes(spot.id);
+          {getAllMissionsWithStatus().map(spot => {
             return (
               <div 
                 key={spot.id} 
-                className={`mission-item ${isCompleted ? 'completed' : ''}`}
+                className={`mission-item ${spot.completed ? 'completed' : ''}`}
               >
                 <div className="mission-status">
-                  {isCompleted ? (
+                  {spot.completed ? (
                     <div className="status-icon completed-icon">✓</div>
                   ) : (
                     <div className="status-icon incomplete-icon"></div>
@@ -184,7 +167,7 @@ const MyMissions = () => {
                 <div className="mission-content">
                   <h3>{spot.name && (spot.name[language] || spot.name.zh || '')}</h3>
                   <p>{spot.mission && (spot.mission[language] || spot.mission.zh || '')}</p>
-                  {!isCompleted && (
+                  {!spot.completed && (
                     <button className="btn btn-primary complete-btn">
                       {t('missions.uploadPhoto', '上傳照片完成任務')}
                     </button>
@@ -194,38 +177,46 @@ const MyMissions = () => {
             );
           })}
           
-          {/* Demo button - for testing only */}
-          <button 
-            className="demo-btn"
-            onClick={completeRandomMission}
-          >
-            {t('missions.simulateCompletion', '模擬完成隨機任務（示範用）')}
-          </button>
+          {/* Demo buttons - for testing only */}
+          <div className="demo-buttons">
+            <button 
+              className="demo-btn"
+              onClick={completeRandomMission}
+            >
+              {t('missions.simulateCompletion', '模擬完成隨機任務（示範用）')}
+            </button>
+            <button 
+              className="demo-btn reset-btn"
+              onClick={resetAllMissions}
+            >
+              {t('missions.resetAll', '重置所有任務（示範用）')}
+            </button>
+          </div>
         </div>
       )}
       
       {activeTab === 'badges' && (
         <div className="badges-container">
           <div className="badges-grid">
-            <div className={`badge ${progress >= 25 ? 'unlocked' : 'locked'}`}>
+            <div className={`badge ${badgeStatus.explorer ? 'unlocked' : 'locked'}`}>
               <div className="badge-icon explorer-icon"></div>
               <h3>{t('badges.explorer', '探險家')}</h3>
               <p>{t('badges.complete25', '完成 25% 的打卡任務')}</p>
             </div>
             
-            <div className={`badge ${progress >= 50 ? 'unlocked' : 'locked'}`}>
+            <div className={`badge ${badgeStatus.teaMaster ? 'unlocked' : 'locked'}`}>
               <div className="badge-icon tea-master-icon"></div>
               <h3>{t('badges.teaMaster', '茶藝師')}</h3>
               <p>{t('badges.complete50', '完成 50% 的打卡任務')}</p>
             </div>
             
-            <div className={`badge ${progress >= 75 ? 'unlocked' : 'locked'}`}>
+            <div className={`badge ${badgeStatus.hikingExpert ? 'unlocked' : 'locked'}`}>
               <div className="badge-icon hiker-icon"></div>
               <h3>{t('badges.hikingExpert', '健行達人')}</h3>
               <p>{t('badges.complete75', '完成 75% 的打卡任務')}</p>
             </div>
             
-            <div className={`badge ${progress >= 100 ? 'unlocked' : 'locked'}`}>
+            <div className={`badge ${badgeStatus.arouMaster ? 'unlocked' : 'locked'}`}>
               <div className="badge-icon arou-master-icon"></div>
               <h3>{t('badges.arouMaster', '阿柔大師')}</h3>
               <p>{t('badges.complete100', '完成 100% 的打卡任務')}</p>

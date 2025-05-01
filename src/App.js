@@ -2,8 +2,9 @@ import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './styles/App.css';
 
-// 導入語言上下文提供者
+// 導入上下文提供者
 import { LanguageProvider } from './contexts/LanguageContext';
+import { MissionProvider } from './contexts/MissionContext';
 
 // Pages
 import Home from './pages/Home';
@@ -27,7 +28,8 @@ const LoadingIndicator = () => (
 function App() {
   return (
     <LanguageProvider>
-      <Suspense fallback={<LoadingIndicator />}>
+      <MissionProvider>
+        <Suspense fallback={<LoadingIndicator />}>
         <Router>
           <div className="app">
             <Navbar />
@@ -43,7 +45,8 @@ function App() {
             </main>
           </div>
         </Router>
-      </Suspense>
+        </Suspense>
+      </MissionProvider>
     </LanguageProvider>
   );
 }

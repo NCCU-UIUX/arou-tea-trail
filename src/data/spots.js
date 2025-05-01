@@ -170,12 +170,16 @@ The most special feature in the garden is the red lily that Yanzi has revived, w
       zh: "石媽祖步道入口在阿柔洋產業道路約 450公尺處，步道終點為鎮南宮石媽祖廟，沿路兩側桂花樹撥鼻，風景優美，步行來回約 30 分鐘，適合親子健行。",
       en: "The Shi Mazu Trail starts at around 450 meters on Arou Avenue, and the endpoint is the Shi Mazu Temple in Zhen Nan Palace. The trail is lined with fragrant osmanthus trees, offering a beautiful view. The round-trip hike takes about 30 minutes, making it suitable for family outings."
     },
+    fullDescription: {
+      zh: "沿文山路中油加油站旁的產業道路直行，步行約 15 分鐘即達古道入口。古道全長約三十分鐘路程，最終可達鎮南宮。鎮南宮供奉的主神相傳是一塊風化而形似媽祖的巨石。原名「水南宮」，有一年深坑大水成災，媽祖託夢，信徒乃依神明指示，改名為「鎮南宮」。沿古道拾級而上，在左側可見建於昭和 5 年（ 1930 年 ） 的 古 碑 ， 碑 文 因 風 化 模 糊 難辨。根據《深坑鄉志》（p.528）的記載，內容略以：在大正 12 年（1923 年）時，因四方善信遠來參香，山路泥濘難行，故善心人士發心捐錢，鋪設橋樑、石階，以便行旅。捐款 50 圓至 6 圓不等，半數為黃姓。",
+      en: "Following the industrial road beside the CPC gas station on Wenshan Road and walking for about 15 minutes, you'll reach the trailhead. The ancient trail takes approximately 30 minutes to complete and ends at Zhen Nan Temple.The temple enshrines a weathered stone believed to resemble the sea goddess Mazu. Originally named 「Shui Nan Temple,」 it was renamed 「Zhen Nan Temple」 after a devastating flood in Shenkeng, during which Mazu appeared in a believer’s dream and guided the name change to protect the town.Ascending the old trail, you will find, on the left side, an ancient monument built in 1930 (Showa 5th year). The inscription is now weathered and hard to read. According to The Chronicle of Shenkeng Township (p.528), during the 12th year of the Taisho era (1923), because many pilgrims traveled from afar and found the muddy mountain path difficult to walk on, the kind-hearted locals donated funds to build bridges and stone steps. Donations ranged from 6 to 50 yen, with half contributed by people surnamed Huang."
+    },
     lat: 600,
     lng: 500,
     category: "family",
     mission: {
       zh: "和家人一起找出最多桂花的地方拍合照。",
-      en: "Take a family photo at the spot with the most osmanthus flowers."
+      en: "Find the spot with the most osmanthus blossoms with your family and take a group photo."
     },
     quiz: {
       question: {
@@ -196,51 +200,51 @@ The most special feature in the garden is the red lily that Yanzi has revived, w
           en: "Weathered stone"
         },
         {
-          zh: "紙紀",
+          zh: "紙紮",
           en: "Paper craft"
         }
       ],
-      correctAnswer: 3
+      correctAnswer: 2
     }
   },
   {
     id: 5,
     name: {
-      zh: "龍鳳寺",
-      en: "Longfeng Temple"
+      zh: "阿柔坑溪親水空間｜溪水與石階的療癒片刻",
+      en: "Aroukeng Creek Waterfront Space｜A Healing Moment of Streams and Stone Steps"
     },
     description: {
-      zh: "當地居民信仰中心，香火鼎盛，歷史悠久。",
-      en: "A center of faith for local residents, with a thriving religious atmosphere and a long history."
+      zh: "阿柔坑溪隱身於青翠山林間，溪水沿層層石階流瀉，形成如畫般的階梯水景。溪畔綠意盎然，並設有涼亭供遊客休憩，環境幽靜清新。漫步於潺潺水聲中，遠離城市喧囂，感受大自然的寧靜與療癒氣息，是放鬆身心的理想去處。",
+      en: "Aroukeng Creek is hidden amidst lush greenery, with water cascading gently over layers of stone steps, creating a picturesque 「staircase waterfall」 view. The creekside is surrounded by vibrant greenery and features pavilions for visitors to rest. The peaceful environment, accompanied by the soft sounds of flowing water, offers an escape from city noise, making it an ideal place to relax and refresh both body and mind."
     },
     lat: 450,
     lng: 700,
-    category: "story",
+    category: "family",
     mission: {
-      zh: "找出寺廟中最古老的一座神像，了解其歷史。",
-      en: "Find the oldest deity statue in the temple and learn about its history."
+      zh: "坐在涼亭聽溪水，記錄你的三種感受。",
+      en: "Sit in the pavilion, listen to the sound of the creek, and record three feelings you experience."
     },
     quiz: {
       question: {
-        zh: "龍鳳寺主要供奉哪位神明？",
-        en: "Which deity is primarily worshipped at Longfeng Temple?"
+        zh: "這個景點最適合哪個季節來訪？",
+        en: "Which season is the best to visit this spot?"
       },
       options: [
         {
-          zh: "觀音菩薩",
-          en: "Guanyin Bodhisattva"
+          zh: "春天",
+          en: "Spring"
         },
         {
-          zh: "媽祖",
-          en: "Mazu"
+          zh: "夏天",
+          en: "Summer"
         },
         {
-          zh: "關聖帝君",
-          en: "Guan Sheng Di Jun"
+          zh: "秋天",
+          en: "Autumn"
         },
         {
-          zh: "玉皇大帝",
-          en: "Jade Emperor"
+          zh: "冬天",
+          en: "Winter"
         }
       ],
       correctAnswer: 1
@@ -249,44 +253,48 @@ The most special feature in the garden is the red lily that Yanzi has revived, w
   {
     id: 6,
     name: {
-      zh: "茶葉製作坊",
-      en: "Tea Processing Workshop"
+      zh: "天南宮｜山中的信仰據點",
+      en: "Tiannan Temple｜A Religious Base in the Mountains"
     },
     description: {
-      zh: "傳統製茶技藝展示，可親手體驗揉茶、烘茶過程。",
-      en: "Traditional tea-making crafts on display, where you can experience the process of kneading and roasting tea leaves firsthand."
+      zh: "敬奉的三太子元祖已有三百多年歷史，於清嘉慶年間自安溪縣遷祀來台，日據時期供奉於文山郡深坑庄大崙尾一號。每年農曆九月九日為三太子聖誕，信眾齊聚慶典，共同祈福，延續傳統信仰。",
+      en: "Dedicated to San Tai Zi, this temple boasts over 300 years of history. The deity was brought from Anxi County, Fujian during the Qing dynasty, Jiaqing era, and was worshiped during the Japanese colonial period at No.1 Dalunwei, Shenkeng Village, Wenshan District. Every year on the ninth day of the ninth lunar month, believers gather to celebrate the Third Prince's birthday, continuing a vibrant religious tradition."
+    },
+    fullDescription: {
+      zh: "深坑天南宮敬奉中壇元帥三太子，傳承逾三百年。清嘉慶年間自福建安溪縣遷祀來台，日據時期供奉於深坑庄大崙尾一號，成為當地信仰中心，香火鼎盛。民國 73 年（1984 年），元帥降駕於茶農高清正，指示建廟濟世，當地人覺得這裡無電、無路、無水面臨各種困難。當晚元帥夢中指引，告知三公里外的石壁有泉水，依指示尋找後果然找到水源，後續也依元帥指示，順利解決建廟，見證元帥庇佑，神恩流傳至今。如今天南宮是登山客與自行車隊休憩及遠眺台北盆地的好地點。",
+      en: "Tiannan Temple enshrines Marshal Zhongtan and has a history of over three centuries. During the Qing dynasty, Jiaqing era, the deity was brought from Anxi County in Fujian to Taiwan. During the Japanese colonial era, the deity was worshiped at No.1 Dalunwei, becoming a spiritual center for the local community.In 1984, the Marshal appeared to a tea farmer, Gao Qingzheng, in a spiritual descent, instructing him to build a temple. Locals faced many challenges: no electricity, no roads, no water sources. However, that night, the Marshal revealed in a dream that there was a spring hidden in a stone wall three kilometers away. Following the dream's guidance, they found the spring, which resolved their difficulties and led to the successful construction of the temple, a testament to the deity’s blessings that are still revered today. Today, Tiannan Temple is a popular rest stop for hikers and cyclists, offering a magnificent view of the Taipei Basin."
     },
     lat: 350,
     lng: 400,
-    category: "tea",
+    category: "family",
     mission: {
-      zh: "參與一次製茶體驗，拍下你的作品。",
-      en: "Participate in a tea-making experience and take a photo of your creation."
+      zh: "和台北盆地拍照！",
+      en: "Take a photo of Taipei Basin."
     },
     quiz: {
       question: {
-        zh: "阿柔茶區最著名的茶葉是哪一種？",
-        en: "What is the most famous tea in the Arou tea area?"
+        zh: "天南宮是如何找到建廟的泉水？",
+        en: "How was the spring for the temple discovered?"
       },
       options: [
         {
-          zh: "東方美人茶",
-          en: "Oriental Beauty Tea"
+          zh: "勘查地理",
+          en: "Land survey"
         },
         {
-          zh: "鐵觀音",
-          en: "Tieguanyin"
+          zh: "天文觀測",
+          en: "Astronomical observation"
         },
         {
-          zh: "阿里山高山茶",
-          en: "Alishan High Mountain Tea"
+          zh: "夢中神明指引",
+          en: "Divine guidance in a dream"
         },
         {
-          zh: "文山包種茶",
-          en: "Wenshan Pouchong Tea"
+          zh: "風水師尋脈",
+          en: "Feng Shui master’s search"
         }
       ],
-      correctAnswer: 3
+      correctAnswer: 2
     }
   },
   {
@@ -383,6 +391,53 @@ For many, this road is not just a test of endurance and skill — it’s also a 
         {
           zh: "美式車隊基地",
           en: "American biker bases"
+        }
+      ],
+      correctAnswer: 2
+    }
+  },
+  {
+    id: 9,
+    name: {
+      zh: "猴山岳步道｜蕨類王國與活化石的世界",
+      en: "Hou Shan Yue Trail｜Kingdom of Ferns and a World of Living Fossils"
+    },
+    description: {
+      zh: "猴山岳步道是著名的淡蘭古道，步道鋪面為石階與自然土路構成，途中有多處岩石峭壁，行走需攀爬，深具挑戰性，全長約兩公里。兩側佈滿雙扇蕨，雙扇蕨是台灣唯一的雙扇蕨科植物，因保有侏儸紀時代的特徵，被稱為「活化石」。它通常生長在淺薄岩壁，外形像兩支破摺扇，邊緣像撕裂的雨傘，因此也叫「破傘蕨」。由於向陽特性，它也被譽為「大自然的指南針」。",
+      en: "The Hou Shan Yue Trail is part of the famous Danlan Ancient Trail network. The trail surface is a mix of stone steps and natural dirt paths. There are several rocky cliffs along the way that require climbing, making the hike quite challenging.The total length is about 2 kilometers."
+    },
+    fullDescription: {
+      zh: "猴山岳步道是著名的淡蘭古道，步道鋪面為石階與自然土路構成，途中有多處岩石峭壁，行走需攀爬，深具挑戰性，全長約兩公里。兩側佈滿雙扇蕨，雙扇蕨是台灣唯一的雙扇蕨科植物，因保有侏儸紀時代的特徵，被稱為「活化石」。它通常生長在淺薄岩壁，外形像兩支破摺扇，邊緣像撕裂的雨傘，因此也叫「破傘蕨」。由於向陽特性，它也被譽為「大自然的指南針」。",
+      en: "The Hou Shan Yue Trail is part of the famous Danlan Ancient Trail network. The trail surface is a mix of stone steps and natural dirt paths. There are several rocky cliffs along the way that require climbing, making the hike quite challenging.The total length is about 2 kilometers.\nThe trail is lined with Dipteris conjugata, a rare plant known as a 「living fossil」 for preserving traits from the Jurassic era. Dipteris conjugata typically grows on shallow rocky walls and looks like two torn fans, resembling a ripped umbrella — hence the nickname 「Broken Umbrella Fern.」 Because of its tendency to grow towards the sun, it’s also known as 「Nature’s Compass.」"
+    },
+    lat: 350,
+    lng: 400,
+    category: "hiking",
+    mission: {
+      zh: "找到一株雙扇蕨，記錄它的樣子與感受。",
+      en: "Find a Dipteris conjugata plant, and record its appearance and your feelings about it."
+    },
+    quiz: {
+      question: {
+        zh: "雙扇蕨又叫什麼？",
+        en: "What is another name for Dipteris conjugata?"
+      },
+      options: [
+        {
+          zh: "雙葉草",
+          en: "Twinleaf"
+        },
+        {
+          zh: "山傘蕨",
+          en: "Mountain Umbrella Fern"
+        },
+        {
+          zh: "破傘蕨",
+          en: "Broken Umbrella Fern"
+        },
+        {
+          zh: "漏斗草",
+          en: "Funnel Grass"
         }
       ],
       correctAnswer: 2

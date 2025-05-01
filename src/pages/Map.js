@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import '../styles/Map.css';
 import spotsData from '../data/spots';
 import { useLanguage } from '../contexts/LanguageContext';
+import { useMission } from '../contexts/MissionContext';
 
 const Map = () => {
   const { language } = useLanguage();
+  const { isMissionCompleted, completeMission } = useMission();
+  const navigate = useNavigate();
   
   // 自定義翻譯函數
   const t = (key, defaultText) => {
@@ -187,10 +190,12 @@ const Map = () => {
             {filteredSpots.map(spot => (
               <div 
                 key={spot.id} 
-                className={`spot-item ${selectedSpot && selectedSpot.id === spot.id ? 'active' : ''}`}
+                className={`spot-item ${selectedSpot && selectedSpot.id === spot.id ? 'active' : ''} ${isMissionCompleted(spot.id) ? 'completed' : ''}`}
                 onClick={() => handleSpotSelect(spot)}
               >
-                <div className={`spot-icon ${spot.category}`}></div>
+                <div className={`spot-icon ${spot.category}`}>
+                  {isMissionCompleted(spot.id) && <span className="completed-badge">✓</span>}
+                </div>
                 <div className="spot-info">
                   <h4>{spot.name && (spot.name[language] || spot.name.zh || '')}</h4>
                   <span className="spot-category">
@@ -219,9 +224,18 @@ const Map = () => {
             {showMission && (
               <div className="mission active">
                 {selectedSpot.mission && (selectedSpot.mission[language] || selectedSpot.mission.zh || '')}
-                <button className="btn btn-primary mission-btn">
-                  {t('map.completeMission', '完成任務')}
-                </button>
+                {isMissionCompleted(selectedSpot.id) ? (
+                  <div className="mission-completed-status">
+                    <span className="checkmark">✓</span> {t('map.missionCompleted', '已完成任務')}
+                  </div>
+                ) : (
+                  <button 
+                    className="btn btn-primary mission-btn"
+                    onClick={() => navigate(`/spot/${selectedSpot.id}`)}
+                  >
+                    {t('map.completeMission', '完成任務')}
+                  </button>
+                )}
               </div>
             )}
             

@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import '../styles/SpotDetail.css';
 import spotsData from '../data/spots';
+import { useMission } from '../contexts/MissionContext';
 
 const SpotDetail = () => {
   const { id } = useParams();
@@ -10,6 +11,7 @@ const SpotDetail = () => {
   const navigate = useNavigate();
   const [spot, setSpot] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
+  const { isMissionCompleted, completeMission, saveMissionPhoto } = useMission();
   const [missionCompleted, setMissionCompleted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -24,8 +26,7 @@ const SpotDetail = () => {
       setSpot(foundSpot);
       
       // Check if mission is already completed
-      const completedMissions = JSON.parse(localStorage.getItem('completedMissions') || '[]');
-      if (completedMissions.includes(spotId)) {
+      if (isMissionCompleted(spotId)) {
         setMissionCompleted(true);
       }
       
@@ -59,17 +60,20 @@ const SpotDetail = () => {
   const confirmMissionComplete = () => {
     const spotId = parseInt(id);
     
-    // Get current completed missions from localStorage
-    const completedMissions = JSON.parse(localStorage.getItem('completedMissions') || '[]');
+    // In a real app, we would handle the photo upload here
+    // For now, we'll simulate it with a placeholder photo data
+    const mockPhotoData = {
+      timestamp: new Date().toISOString(),
+      photoUrl: 'https://placeholder.com/150',
+      // In a real implementation, this would be the actual photo data
+    };
     
-    // Add this spot if not already completed
-    if (!completedMissions.includes(spotId)) {
-      const updatedMissions = [...completedMissions, spotId];
-      localStorage.setItem('completedMissions', JSON.stringify(updatedMissions));
-      setMissionCompleted(true);
-      // Close the modal
-      setShowUploadModal(false);
-    }
+    // Save the mission photo and mark as completed
+    saveMissionPhoto(spotId, mockPhotoData);
+    setMissionCompleted(true);
+    
+    // Close the modal
+    setShowUploadModal(false);
   };
   
   const cancelUpload = () => {
@@ -189,6 +193,7 @@ const SpotDetail = () => {
                   <div className="upload-area">
                     <div className="upload-icon">+</div>
                     <p>{t('spot.uploadInstructions', '點擊選擇照片或拖放至此')}</p>
+                    <input type="file" accept="image/*" className="file-input" />
                   </div>
                   <div className="upload-actions">
                     <button 
