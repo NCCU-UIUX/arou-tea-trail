@@ -7,7 +7,7 @@ import { useMission } from '../contexts/MissionContext';
 
 const Map = () => {
   const { language } = useLanguage();
-  const { isMissionCompleted, completeMission } = useMission();
+  const { isMissionCompleted } = useMission();
   const navigate = useNavigate();
   
   // 自定義翻譯函數
@@ -106,12 +106,17 @@ const Map = () => {
     }
   }, [location.search]);
   
-  // Google Maps 嵌入式地圖的 URL
-  const googleMapsUrl = "https://www.google.com/maps/d/embed?mid=12Sm7DMQB4uIFyuD7wug7vRSdtpOALfU&ll=24.983995802133418%2C121.60638999999999&z=14";
-  
   // 直接顯示特定景點的資訊，不再依賴地圖點擊
   const handleSpotSelect = (spot) => {
     setSelectedSpot(spot);
+    setShowMission(false);
+    setShowQuiz(false);
+    setSelectedAnswer(null);
+  };
+  
+  // 關閉景點卡片
+  const closeSpotCard = () => {
+    setSelectedSpot(null);
     setShowMission(false);
     setShowQuiz(false);
     setSelectedAnswer(null);
@@ -123,6 +128,22 @@ const Map = () => {
     // 這樣從其他頁面跳轉過來時，選中的景點不會被清空
     if (!location.search) {
       setSelectedSpot(null);
+    }
+  };
+  
+  // 根據選擇的類別返回對應的地圖 URL
+  const getMapUrlByCategory = () => {
+    switch (activeFilter) {
+      case 'family':
+        return "https://www.google.com/maps/d/embed?mid=1_Z1_8Ya3Dhb_WkH0sCYbrfTh6jVXGJ0&ll=24.991610039597095%2C121.61767499999999&z=17";
+      case 'tea':
+        return "https://www.google.com/maps/d/embed?mid=1Tj-aGKLaaM2FU8mW2xtIaOxEDmTg85o&ll=24.985710488492803%2C121.61780500000003&z=15";
+      case 'hiking':
+        return "https://www.google.com/maps/d/embed?mid=1gp5YOiqTQy1rgSgizADxlf5RkMcvogo&ll=24.983091602158957%2C121.60638999999999&z=15";
+      case 'story':
+        return "https://www.google.com/maps/d/embed?mid=1y1HGsxSMP9uiuxwAVNrCYulKfr8hk1o&ll=24.988814846161194%2C121.609785&z=15";
+      default: // 'all'
+        return "https://www.google.com/maps/d/embed?mid=1yBn8t1hDIrNNAnB-WKQT-7HLDoBHA2Q&ll=24.983995802133418%2C121.60638999999999&z=14";
     }
   };
   
@@ -170,20 +191,33 @@ const Map = () => {
       </div>
       
       <div className="map-section">
-        <div className="map-container">
-          <iframe 
-            src={googleMapsUrl}
-            width="100%" 
-            height="100%" 
-            style={{ border: 0 }} 
-            allowFullScreen="" 
-            loading="lazy" 
-            referrerPolicy="no-referrer-when-downgrade"
-            title={t('map.mapTitle', '阿柔茶文化步道地圖')}
-          ></iframe>
+        <div className="map-container" onClick={closeSpotCard}>
+          <h2 className="map-title">{t('map.mapTitle', '阿柔茶文化步道地圖')}</h2>
+          
+          {/* Google Maps 嵌入式地圖 - 根據選擇的類別動態顯示不同地圖 */}
+          <div className="google-map-container">
+            <iframe 
+              src={getMapUrlByCategory()} 
+              width="100%" 
+              height="450" 
+              style={{ border: 0 }} 
+              allowFullScreen="" 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="阿柔茶文化步道地圖"
+            ></iframe>
+          </div>
         </div>
         
-        <div className="spots-list">
+        <div 
+          className="spots-list"
+          onClick={(e) => {
+            // 只有當點擊的是spots-list本身而不是其子元素時才關閉卡片
+            if (e.target.className === 'spots-list') {
+              selectedSpot && closeSpotCard();
+            }
+          }}
+        >
           <h3>{t('map.spotsList', '景點列表')}</h3>
           <p>{t('map.clickToView', '點擊下方景點查看詳細資訊')}</p>
           <div className="spots-grid">

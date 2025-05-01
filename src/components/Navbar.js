@@ -7,7 +7,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 const Navbar = () => {
   const location = useLocation();
   // 使用自定義語言 Hook
-  const { language, setLanguage, toggleLanguage } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   
   // 翻譯函數
   const t = (key, defaultText) => {

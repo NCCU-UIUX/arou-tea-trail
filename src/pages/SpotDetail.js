@@ -11,7 +11,7 @@ const SpotDetail = () => {
   const navigate = useNavigate();
   const [spot, setSpot] = useState(null);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
-  const { isMissionCompleted, completeMission, saveMissionPhoto } = useMission();
+  const { isMissionCompleted, saveMissionPhoto } = useMission();
   const [missionCompleted, setMissionCompleted] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [showUploadModal, setShowUploadModal] = useState(false);
@@ -46,7 +46,7 @@ const SpotDetail = () => {
       
       return () => clearTimeout(timer);
     }
-  }, [id, navigate]);
+  }, [id, navigate, isMissionCompleted]);
   
   const handleAnswerClick = (index) => {
     setSelectedAnswer(index);

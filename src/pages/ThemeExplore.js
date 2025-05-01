@@ -174,7 +174,7 @@ const ThemeExplore = () => {
               {expandedSpot === spot.id && (
                 <div className="spot-details">
                   <div className="spot-image" style={{backgroundColor: '#e6f2e6'}}></div>
-                  <p className="spot-description">{spot.fullDescription && (spot.fullDescription[language] || spot.fullDescription.zh || '') || (spot.description && (spot.description[language] || spot.description.zh || ''))}</p>
+                  <p className="spot-description">{(spot.fullDescription && (spot.fullDescription[language] || spot.fullDescription.zh || '')) || (spot.description && (spot.description[language] || spot.description.zh || ''))}</p>
                   
                   <div className="spot-info-container">
                     <div className="spot-info">

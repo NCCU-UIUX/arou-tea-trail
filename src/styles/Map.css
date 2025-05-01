@@ -3,6 +3,36 @@
   flex-direction: column;
   height: calc(100vh - 140px);
   min-height: 600px;
+  position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #4a8f3d;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.back-button:before {
+  content: '\2190';
+  margin-right: 5px;
+}
+
+.back-button:hover {
+  background-color: #3a7030;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .filter-buttons {

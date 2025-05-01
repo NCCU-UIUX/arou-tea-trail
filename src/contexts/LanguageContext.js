@@ -23,7 +23,7 @@ export const LanguageProvider = ({ children }) => {
   // 初始化時同步 i18next 語言
   useEffect(() => {
     i18next.changeLanguage(language);
-  }, []);
+  }, [language]);
   
   // 切換語言的函數
   const toggleLanguage = () => {
