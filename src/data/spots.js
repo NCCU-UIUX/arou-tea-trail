@@ -3,10 +3,10 @@ const spots = [
     id: 1,
     name: {
       zh: "金城茶園｜藝術家的手作茶園",
-      en: "Jincheng Tea Garden | Artist's Handcrafted Tea Garden"
+      en: "Jincheng Tea Garden | An Artist's Handmade Tea Garden"
     },
     description: {
-      zh: "畫家金城老師把對茶的熱愛化為行動，將竹筍園變成茶園。堅持友善無毒耕作，茶樹刻意種得比別人高，只為減少拔草的次數。他說：「做茶是一種工藝，是好玩的事情。做茶的過程，就像做餅乾、蛋糕一樣，非常吸引人」",
+      zh: "畫家金城老師把對茶的熱愛化為行動，將竹筍園變成茶園。堅持友善無毒耕作，茶樹刻意種得比別人高，只為減少拔草的次數。他說：「做茶是一種工藝，是好玩的事情。做茶的過程，就像做餅乾、蛋糕一樣，非常吸引人」。",
       en: "Painter Teacher Jincheng turned his love for tea into action, transforming a bamboo garden into a tea garden. Insisting on friendly, non-toxic farming, he deliberately grows tea trees taller than others, just to reduce the frequency of weeding. He says: 'Making tea is a craft, it's a fun thing. The process of making tea is very attractive, just like making cookies and cakes.'"
     },
     lat: 400,
