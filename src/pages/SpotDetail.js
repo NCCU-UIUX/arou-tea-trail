@@ -151,7 +151,7 @@ const SpotDetail = () => {
       <div className="spot-content">
         <div className="spot-description">
           <h3>{t('spot.details', '景點介紹')}</h3>
-          <p>{spot.description[i18n.language] || spot.description.zh}</p>
+          <p>{(spot.fullDescription && (spot.fullDescription[i18n.language] || spot.fullDescription.zh)) || (spot.description && (spot.description[i18n.language] || spot.description.zh))}</p>
           <p>
             {i18n.language === 'en' ? 
               `${spot.name[i18n.language] || spot.name.zh} is an important spot on the Arou Tea Trail that visitors should not miss. 
