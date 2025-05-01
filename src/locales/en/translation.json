@@ -98,6 +98,25 @@
     "hours": "Opening Hours",
     "contact": "Contact",
     "relatedSpots": "Related Spots",
-    "checkIn": "Check In"
+    "checkIn": "Check In",
+    "uploadPhoto": "Upload Photo to Complete Mission",
+    "missionCompleted": "Mission Completed!",
+    "uploadTitle": "Upload Photo",
+    "uploadInstructions": "Click to select a photo or drag and drop here"
+  },
+  "common": {
+    "loading": "Loading...",
+    "back": "Back",
+    "backToMap": "Back to Map",
+    "viewMissions": "View My Missions",
+    "confirm": "Confirm",
+    "cancel": "Cancel"
+  },
+  "error": {
+    "spotNotFound": "Spot not found"
+  },
+  "quiz": {
+    "correct": "Correct!",
+    "incorrect": "Incorrect! The correct answer is: "
   }
 }

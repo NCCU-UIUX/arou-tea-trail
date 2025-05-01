@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import i18next from 'i18next';
 
 // 創建語言上下文
 export const LanguageContext = createContext();
@@ -12,10 +13,17 @@ export const LanguageProvider = ({ children }) => {
     return 'zh';
   });
   
-  // 當語言變更時，保存到本地存儲
+  // 當語言變更時，保存到本地存儲並同步 i18next
   useEffect(() => {
     localStorage.setItem('language', language);
+    // 同步 i18next 語言設置
+    i18next.changeLanguage(language);
   }, [language]);
+  
+  // 初始化時同步 i18next 語言
+  useEffect(() => {
+    i18next.changeLanguage(language);
+  }, []);
   
   // 切換語言的函數
   const toggleLanguage = () => {

@@ -98,6 +98,25 @@
     "hours": "營業時間",
     "contact": "聯絡方式",
     "relatedSpots": "相關景點",
-    "checkIn": "打卡"
+    "checkIn": "打卡",
+    "uploadPhoto": "上傳照片完成任務",
+    "missionCompleted": "任務已完成！",
+    "uploadTitle": "上傳照片",
+    "uploadInstructions": "點擊選擇照片或拖放至此"
+  },
+  "common": {
+    "loading": "載入中...",
+    "back": "返回",
+    "backToMap": "返回地圖",
+    "viewMissions": "查看我的任務",
+    "confirm": "確認",
+    "cancel": "取消"
+  },
+  "error": {
+    "spotNotFound": "找不到此景點"
+  },
+  "quiz": {
+    "correct": "答對了！",
+    "incorrect": "答錯了！正確答案是："
   }
 }
