@@ -1,0 +1,270 @@
+.map-page {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  min-height: 600px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f0e6d2;
+  color: #5a4a2f;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  background-color: #e5d9c0;
+}
+
+.filter-btn.active {
+  background-color: #4a8f3d;
+  color: white;
+}
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.map-container {
+  height: 500px;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.spots-list {
+  background-color: #f9f5f0;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.spots-list h3 {
+  color: #3a7030;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.spots-list p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.spots-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.spot-item {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.spot-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.spot-item.active {
+  border-left: 4px solid #4a8f3d;
+  background-color: #f0f8f0;
+}
+
+.spot-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.spot-icon.tea {
+  background-color: #4a8f3d;
+}
+
+.spot-icon.family {
+  background-color: #f29d38;
+}
+
+.spot-icon.hiking {
+  background-color: #3d8f8f;
+}
+
+.spot-icon.story {
+  background-color: #8f3d8f;
+}
+
+.spot-info {
+  flex: 1;
+}
+
+.spot-info h4 {
+  margin: 0 0 5px 0;
+  color: #333;
+  font-size: 1rem;
+}
+
+.spot-category {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.simplified-map {
+  width: 100%;
+  height: 100%;
+  background-color: #f0e6d2;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.simplified-map h3 {
+  color: #3a7030;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.map-note {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.markers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  max-width: 800px;
+}
+
+.simple-marker {
+  padding: 10px 15px;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.simple-marker:hover {
+  transform: scale(1.05);
+}
+
+.simple-marker.tea {
+  background-color: #4a8f3d;
+}
+
+.simple-marker.family {
+  background-color: #f29d38;
+}
+
+.simple-marker.hiking {
+  background-color: #3d8f8f;
+}
+
+.simple-marker.story {
+  background-color: #8f3d8f;
+}
+
+/* Custom marker styles */
+.custom-marker {
+  width: 30px;
+  height: 30px;
+}
+
+.marker-icon {
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.5));
+  transition: transform 0.2s ease;
+}
+
+.custom-marker:hover .marker-icon {
+  transform: scale(1.2);
+}
+
+.custom-marker.tea .marker-icon {
+  background-color: #4a8f3d;
+  border-radius: 50%;
+}
+
+.custom-marker.family .marker-icon {
+  background-color: #f29d38;
+  border-radius: 50%;
+}
+
+.custom-marker.hiking .marker-icon {
+  background-color: #3d8f8f;
+  border-radius: 50%;
+}
+
+.custom-marker.story .marker-icon {
+  background-color: #8f3d8f;
+  border-radius: 50%;
+}
+
+/* Spot card */
+.spot-card {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-width: 350px;
+  width: 100%;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.mission-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .spot-card {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    max-width: 100%;
+    border-radius: 12px 12px 0 0;
+  }
+}

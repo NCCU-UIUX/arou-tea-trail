@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阿柔茶文化步道互動導覽</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      background-color: #f8f5f0;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background-color: #4a8f3d;
+      color: white;
+      padding: 15px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    
+    .navbar-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      padding: 5px 0;
+      position: relative;
+    }
+    
+    .nav-links a:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover:after,
+    .nav-links a.active:after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero {
+      height: 500px;
+      background-color: #4a8f3d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      font-size: 16px;
+      display: inline-block;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    
+    .btn-primary {
+      background-color: #4a8f3d;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background-color: #3a7030;
+    }
+    
+    .btn-secondary {
+      background-color: #f0e6d2;
+      color: #5a4a2f;
+      border: 1px solid #d4c9b6;
+    }
+    
+    .btn-secondary:hover {
+      background-color: #e5d9c0;
+    }
+    
+    .cta-button {
+      font-size: 1.2rem;
+      padding: 12px 30px;
+    }
+    
+    /* Categories Section */
+    .theme-categories {
+      margin-bottom: 60px;
+    }
+    
+    .theme-categories h2,
+    .featured-spots h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 30px;
+      color: #3a7030;
+    }
+    
+    .categories-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+    
+    .category-card {
+      background-color: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+    }
+    
+    .category-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .category-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+    }
+    
+    .tea-icon {
+      background-color: #e6f2e6;
+    }
+    
+    .family-icon {
+      background-color: #f2e6e6;
+    }
+    
+    .hiking-icon {
+      background-color: #e6e6f2;
+    }
+    
+    .story-icon {
+      background-color: #f2f2e6;
+    }
+    
+    .category-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+      color: #3a7030;
+    }
+    
+    .category-card p {
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    /* Featured Spots */
+    .spots-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    .spot-preview {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+    
+    .spot-preview:hover {
+      transform: translateY(-10px);
+    }
+    
+    .spot-image {
+      height: 200px;
+    }
+    
+    #spot1 {
+      background-color: #d4e6d4;
+    }
+    
+    #spot2 {
+      background-color: #d4d4e6;
+    }
+    
+    #spot3 {
+      background-color: #e6d4d4;
+    }
+    
+    .spot-preview h3 {
+      padding: 20px 20px 10px;
+      margin: 0;
+      color: #3a7030;
+    }
+    
+    .spot-preview p {
+      padding: 0 20px 20px;
+      margin: 0;
+      color: #666;
+      line-height: 1.5;
+    }
+    
+    .spot-preview .btn {
+      margin: 0 20px 20px;
+      display: inline-block;
+    }
+    
+    /* Map Section */
+    .map-page {
+      padding: 20px;
+      margin-top: 40px;
+    }
+    
+    .filter-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+    }
+    
+    .filter-btn {
+      padding: 8px 15px;
+      border-radius: 20px;
+      border: none;
+      background-color: #f0e6d2;
+      color: #5a4a2f;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .filter-btn:hover {
+      background-color: #e5d9c0;
+    }
+    
+    .filter-btn.active {
+      background-color: #4a8f3d;
+      color: white;
+    }
+    
+    .map-container {
+      position: relative;
+      height: 500px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      margin-bottom: 40px;
+    }
+    
+    .simplified-map {
+      width: 100%;
+      height: 100%;
+      background-color: #f0e6d2;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .simplified-map h3 {
+      color: #3a7030;
+      margin-bottom: 10px;
+    }
+    
+    .map-note {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    .markers-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      max-width: 800px;
+    }
+    
+    .marker {
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: white;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .marker:hover {
+      transform: scale(1.05);
+    }
+    
+    .marker.tea {
+      background-color: #4a8f3d;
+    }
+    
+    .marker.family {
+      background-color: #f29d38;
+    }
+    
+    .marker.hiking {
+      background-color: #3d8f8f;
+    }
+    
+    .marker.story {
+      background-color: #8f3d8f;
+    }
+    
+    /* Spot Card */
+    .spot-card {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      padding: 20px;
+      margin: 20px 0;
+      max-width: 350px;
+    }
+    
+    .spot-card h3 {
+      color: #4a8f3d;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+    
+    .spot-card p {
+      color: #555;
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+    
+    .spot-card .toggle {
+      background-color: #f0e6d2;
+      color: #5a4a2f;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 6px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .spot-card .toggle:hover {
+      background-color: #e5d9c0;
+    }
+    
+    .spot-card .mission,
+    .spot-card .quiz {
+      background-color: #f9f5f0;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+    
+    .spot-card .quiz ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .spot-card .quiz li {
+      padding: 8px 12px;
+      margin-bottom: 8px;
+      background-color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    
+    .spot-card .quiz li:hover {
+      background-color: #f0e6d2;
+    }
+    
+    .spot-card .quiz li.correct {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    
+    .spot-card .quiz li.incorrect {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    
+    .mission-btn {
+      margin-top: 15px;
+      width: 100%;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: #3a7030;
+      color: white;
+      padding: 40px 0;
+      margin-top: 60px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    
+    .footer-section {
+      flex: 1;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+      margin-bottom: 15px;
+      font-size: 1.2rem;
+    }
+    
+    .footer-section p {
+      margin-bottom: 10px;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-container {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .nav-links {
+        width: 100%;
+        justify-content: space-between;
+      }
+      
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="#" class="logo">阿柔茶文化步道</a>
+      <div class="nav-links">
+        <a href="#map" class="active">互動導覽地圖</a>
+        <a href="#explore">景點分類導覽</a>
+        <a href="#missions">我的打卡紀錄</a>
+        <a href="#about">關於阿柔</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Home Section -->
+  <div class="container">
+    <!-- Hero -->
+    <div class="hero">
+      <div class="hero-content">
+        <h1>阿柔茶文化步道</h1>
+        <p class="tagline">探索茶香山林，體驗自然與文化的完美融合</p>
+        <a href="#map" class="btn btn-primary cta-button">開始探索！</a>
+      </div>
+    </div>
+    
+    <!-- Theme Categories -->
+    <div class="theme-categories">
+      <h2>探索主題</h2>
+      <div class="categories-container">
+        <a href="#" class="category-card">
+          <div class="category-icon tea-icon"></div>
+          <h3>茶文化體驗</h3>
+          <p>探索百年茶園，品味阿柔茶文化的獨特魅力</p>
+        </a>
+        
+        <a href="#" class="category-card">
+          <div class="category-icon family-icon"></div>
+          <h3>親子輕鬆路線</h3>
+          <p>適合全家同行的輕鬆步道，自然教育的最佳選擇</p>
+        </a>
+        
+        <a href="#" class="category-card">
+          <div class="category-icon hiking-icon"></div>
+          <h3>健行挑戰之路</h3>
+          <p>挑戰自我，感受山林之美與身心靈的洗滌</p>
+        </a>
+        
+        <a href="#" class="category-card">
+          <div class="category-icon story-icon"></div>
+          <h3>故事深度探索</h3>
+          <p>深入了解阿柔的歷史文化與在地故事</p>
+        </a>
+      </div>
+    </div>
+    
+    <!-- Featured Spots -->
+    <div class="featured-spots">
+      <h2>熱門景點</h2>
+      <div class="spots-container">
+        <div class="spot-preview">
+          <div class="spot-image" id="spot1"></div>
+          <h3>金城茶園</h3>
+          <p>藝術家的手作茶園，堅持無毒、茶如生活工藝。</p>
+          <a href="#" class="btn btn-secondary">了解更多</a>
+        </div>
+        
+        <div class="spot-preview">
+          <div class="spot-image" id="spot2"></div>
+          <h3>山頂觀景台</h3>
+          <p>360度視野，遠眺城市與山脈的絕佳位置。</p>
+          <a href="#" class="btn btn-secondary">了解更多</a>
+        </div>
+        
+        <div class="spot-preview">
+          <div class="spot-image" id="spot3"></div>
+          <h3>古道石階</h3>
+          <p>百年歷史的石階古道，見證阿柔茶運輸的繁榮歲月。</p>
+          <a href="#" class="btn btn-secondary">了解更多</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Map Section -->
+    <div class="map-page" id="map">
+      <h2>互動導覽地圖</h2>
+      
+      <div class="filter-buttons">
+        <button class="filter-btn active">全部</button>
+        <button class="filter-btn">茶園</button>
+        <button class="filter-btn">親子</button>
+        <button class="filter-btn">健行</button>
+        <button class="filter-btn">信仰</button>
+      </div>
+      
+      <div class="map-container">
+        <div class="simplified-map">
+          <h3>阿柔茶文化步道地圖</h3>
+          <p class="map-note">點擊下方景點可查看詳細資訊</p>
+          
+          <div class="markers-container">
+            <div class="marker tea" onclick="showSpotCard('金城茶園')">金城茶園</div>
+            <div class="marker hiking" onclick="showSpotCard('山頂觀景台')">山頂觀景台</div>
+            <div class="marker story" onclick="showSpotCard('古道石階')">古道石階</div>
+            <div class="marker family" onclick="showSpotCard('親子生態池')">親子生態池</div>
+            <div class="marker story" onclick="showSpotCard('龍鳳寺')">龍鳳寺</div>
+            <div class="marker tea" onclick="showSpotCard('茶葉製作坊')">茶葉製作坊</div>
+            <div class="marker hiking" onclick="showSpotCard('森林探險區')">森林探險區</div>
+            <div class="marker family" onclick="showSpotCard('兒童冒險樂園')">兒童冒險樂園</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Example Spot Card -->
+      <div class="spot-card" id="spotCard" style="display: none;">
+        <h3 id="spotTitle">金城茶園</h3>
+        <p id="spotDescription">藝術家的手作茶園，堅持無毒、茶如生活工藝。</p>
+        
+        <button class="toggle" onclick="toggleMission()">打卡任務</button>
+        <div class="mission" id="missionContent" style="display: none;">
+          <p>找一棵最高的茶樹拍照並寫下一句祝福。</p>
+          <button class="btn btn-primary mission-btn">完成任務</button>
+        </div>
+        
+        <button class="toggle" onclick="toggleQuiz()">互動題目</button>
+        <div class="quiz" id="quizContent" style="display: none;">
+          <p>金城老師為什麼讓茶樹比一般高？</p>
+          <ul>
+            <li onclick="selectAnswer(this, false)">A. 避開太陽直曬</li>
+            <li onclick="selectAnswer(this, true)">B. 減少除草次數</li>
+            <li onclick="selectAnswer(this, false)">C. 美觀</li>
+            <li onclick="selectAnswer(this, false)">D. 保護茶香</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>關於阿柔茶文化步道</h3>
+        <p>阿柔茶文化步道位於台灣北部山區，擁有超過百年的茶葉種植歷史。</p>
+        <p>這裡是了解台灣茶文化發展的重要場域。</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>聯絡我們</h3>
+        <p>電話：02-XXXX-XXXX</p>
+        <p>Email：info@arouteatrail.tw</p>
+      </div>
+      
+      <div class="footer-section">
+        <h3>參訪資訊</h3>
+        <p>開放時間：全年開放，建議日出至日落期間前往</p>
+        <p>地址：台灣北部山區阿柔茶文化步道</p>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 阿柔茶文化步道互動導覽. All Rights Reserved.</p>
+    </div>
+  </footer>
+  
+  <script>
+    // Simple JavaScript for interactive elements
+    function showSpotCard(spotName) {
+      const spotCard = document.getElementById('spotCard');
+      const spotTitle = document.getElementById('spotTitle');
+      const spotDescription = document.getElementById('spotDescription');
+      
+      // Reset display
+      document.getElementById('missionContent').style.display = 'none';
+      document.getElementById('quizContent').style.display = 'none';
+      
+      // Set content based on spot name
+      spotTitle.textContent = spotName;
+      
+      // Set description based on spot name
+      switch(spotName) {
+        case '金城茶園':
+          spotDescription.textContent = '藝術家的手作茶園，堅持無毒、茶如生活工藝。';
+          break;
+        case '山頂觀景台':
+          spotDescription.textContent = '360度視野，遠眺城市與山脈的絕佳位置。';
+          break;
+        case '古道石階':
+          spotDescription.textContent = '百年歷史的石階古道，見證阿柔茶運輸的繁榮歲月。';
+          break;
+        case '親子生態池':
+          spotDescription.textContent = '豐富的水生植物和小動物，是孩子們的自然教室。';
+          break;
+        case '龍鳳寺':
+          spotDescription.textContent = '當地居民信仰中心，香火鼎盛，歷史悠久。';
+          break;
+        case '茶葉製作坊':
+          spotDescription.textContent = '傳統製茶技藝展示，可親手體驗揉茶、烘茶過程。';
+          break;
+        case '森林探險區':
+          spotDescription.textContent = '各種難度的健行路線，挑戰自我的最佳選擇。';
+          break;
+        case '兒童冒險樂園':
+          spotDescription.textContent = '天然素材打造的遊樂設施，讓孩子盡情玩耍。';
+          break;
+        default:
+          spotDescription.textContent = '探索阿柔茶文化步道的美麗景點。';
+      }
+      
+      // Show the card
+      spotCard.style.display = 'block';
+      
+      // Scroll to the card
+      spotCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    
+    function toggleMission() {
+      const missionContent = document.getElementById('missionContent');
+      missionContent.style.display = missionContent.style.display === 'none' ? 'block' : 'none';
+    }
+    
+    function toggleQuiz() {
+      const quizContent = document.getElementById('quizContent');
+      quizContent.style.display = quizContent.style.display === 'none' ? 'block' : 'none';
+    }
+    
+    function selectAnswer(element, isCorrect) {
+      // Reset all answers
+      const answers = document.querySelectorAll('.quiz li');
+      answers.forEach(answer => {
+        answer.classList.remove('correct');
+        answer.classList.remove('incorrect');
+      });
+      
+      // Mark the selected answer
+      if (isCorrect) {
+        element.classList.add('correct');
+      } else {
+        element.classList.add('incorrect');
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+.my-missions {
+  padding-bottom: 40px;
+}
+
+.missions-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.missions-header h2 {
+  color: #3a7030;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.missions-header p {
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.progress-container {
+  margin-bottom: 30px;
+}
+
+.progress-bar {
+  height: 20px;
+  background-color: #f0e6d2;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #4a8f3d;
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+.progress-text {
+  text-align: center;
+  color: #666;
+  font-weight: 600;
+}
+
+.missions-tabs {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  background-color: #f0e6d2;
+  color: #5a4a2f;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab-btn:hover {
+  background-color: #e5d9c0;
+}
+
+.tab-btn.active {
+  background-color: #4a8f3d;
+  color: white;
+}
+
+/* Missions List */
+.missions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mission-item {
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding: 20px;
+}
+
+.mission-item.completed {
+  border-left: 5px solid #4a8f3d;
+}
+
+.mission-status {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.status-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completed-icon {
+  background-color: #4a8f3d;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.incomplete-icon {
+  border: 2px solid #ccc;
+}
+
+.mission-content {
+  flex: 1;
+}
+
+.mission-content h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #3a7030;
+}
+
+.mission-content p {
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.complete-btn {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+}
+
+/* Badges */
+.badges-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.badge {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.badge.unlocked {
+  border: 2px solid #4a8f3d;
+}
+
+.badge.locked {
+  opacity: 0.6;
+  filter: grayscale(1);
+}
+
+.badge.unlocked:hover {
+  transform: translateY(-10px);
+}
+
+.badge-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+}
+
+.explorer-icon {
+  background-color: #f2e6e6;
+}
+
+.tea-master-icon {
+  background-color: #e6f2e6;
+}
+
+.hiker-icon {
+  background-color: #e6e6f2;
+}
+
+.arou-master-icon {
+  background-color: #f2f2e6;
+}
+
+.badge h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #3a7030;
+}
+
+.badge p {
+  color: #666;
+  margin: 0;
+}
+
+.rewards-section {
+  background-color: #f9f5f0;
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+}
+
+.rewards-section h3 {
+  color: #3a7030;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.rewards-section p {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.btn.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Demo button - for testing only */
+.demo-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f0e6d2;
+  color: #5a4a2f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  align-self: center;
+}
+
+.demo-btn:hover {
+  background-color: #e5d9c0;
+}
+
+@media (max-width: 768px) {
+  .missions-tabs {
+    flex-direction: column;
+  }
+}

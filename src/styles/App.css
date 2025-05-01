@@ -1,0 +1,138 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Button Styles */
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #4a8f3d;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #3a7030;
+}
+
+.btn-secondary {
+  background-color: #f0e6d2;
+  color: #5a4a2f;
+  border: 1px solid #d4c9b6;
+}
+
+.btn-secondary:hover {
+  background-color: #e5d9c0;
+}
+
+/* Card Styles */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Spot Card Styles */
+.spot-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  padding: 20px;
+  margin-bottom: 20px;
+  max-width: 350px;
+}
+
+.spot-card h3 {
+  color: #4a8f3d;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+}
+
+.spot-card p {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.spot-card .toggle {
+  background-color: #f0e6d2;
+  color: #5a4a2f;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.spot-card .toggle:hover {
+  background-color: #e5d9c0;
+}
+
+.spot-card .mission,
+.spot-card .quiz {
+  background-color: #f9f5f0;
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  display: none;
+}
+
+.spot-card .mission.active,
+.spot-card .quiz.active {
+  display: block;
+}
+
+.spot-card .quiz ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.spot-card .quiz li {
+  padding: 8px 12px;
+  margin-bottom: 8px;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.spot-card .quiz li:hover {
+  background-color: #f0e6d2;
+}
+
+.spot-card .quiz li.correct {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.spot-card .quiz li.incorrect {
+  background-color: #f8d7da;
+  color: #721c24;
+}
